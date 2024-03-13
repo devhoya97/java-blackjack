@@ -3,7 +3,6 @@ package blackjack.domain;
 import blackjack.domain.card.Card;
 import blackjack.domain.card.Deck;
 import blackjack.domain.card.Hand;
-import java.util.ArrayList;
 
 public class Dealer extends Gamer {
 
@@ -17,7 +16,7 @@ public class Dealer extends Gamer {
     }
 
     public static Dealer from(final Deck deck) {
-        return new Dealer(deck, new Hand(new ArrayList<>()));
+        return new Dealer(deck, new Hand());
     }
 
     public void draw() {
