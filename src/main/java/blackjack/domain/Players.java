@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Players {
 
+    public static final int INITIAL_CARD_COUNT = 2;
     private final List<Player> players;
 
     private Players(final List<Player> players) {
@@ -22,7 +23,12 @@ public class Players {
 
     public void drawInitialHand(final Dealer dealer) {
         for (final Player player : players) {
-            player.draw(dealer.drawPlayerCard());
+            drawInitialHand(dealer, player);
+        }
+    }
+
+    private static void drawInitialHand(final Dealer dealer, final Player player) {
+        for (int i = 0; i < INITIAL_CARD_COUNT; i++) {
             player.draw(dealer.drawPlayerCard());
         }
     }
